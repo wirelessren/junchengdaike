@@ -103,6 +103,16 @@ foreach ($fileName in $documentationFiles) {
     }
 }
 
+$publicTemplateDir = Join-Path $repoRoot "templates"
+$publicTemplateFiles = @("教师课表统计.xlsx", "通知单模版.xlsx")
+foreach ($fileName in $publicTemplateFiles) {
+    $sourceFile = Join-Path $publicTemplateDir $fileName
+    if (-not (Test-Path $sourceFile)) {
+        throw "Sanitized template not found: $sourceFile"
+    }
+    Copy-Item -LiteralPath $sourceFile -Destination $packagePath -Force
+}
+
 if ($IncludeDataFiles) {
     $dataFiles = @("教师课表统计.xlsx", "教师源课表.xlsx", "通知单模版.xlsx", "教师课表.db")
     foreach ($fileName in $dataFiles) {

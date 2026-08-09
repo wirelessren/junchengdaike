@@ -81,6 +81,18 @@ set_target_properties(${APP_TARGET} PROPERTIES
     OUTPUT_NAME "${APP_OUTPUT_NAME}"
 )
 
+set(PUBLIC_TEMPLATE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/templates")
+add_custom_command(TARGET ${APP_TARGET} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${PUBLIC_TEMPLATE_DIR}/教师课表统计.xlsx"
+        "$<TARGET_FILE_DIR:${APP_TARGET}>/教师课表统计.xlsx"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${PUBLIC_TEMPLATE_DIR}/通知单模版.xlsx"
+        "$<TARGET_FILE_DIR:${APP_TARGET}>/通知单模版.xlsx"
+    COMMENT "Copying sanitized Excel templates"
+    VERBATIM
+)
+
 target_include_directories(${APP_TARGET} PRIVATE
     src
     ${FREEXL_INCLUDE_DIR}

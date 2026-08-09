@@ -4,6 +4,7 @@
 *.db
 *.xlsx
 *.xls
+!templates/*.xlsx
 .codegraph/
 ui/local_override.qss
 third_party/xlnt/.git/

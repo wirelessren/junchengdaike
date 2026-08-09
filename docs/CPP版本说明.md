@@ -82,6 +82,8 @@
 - MinGW/UCRT64 运行库
 - `README.md`
 - `LICENSE`
+- 脱敏的 `教师课表统计.xlsx`
+- 脱敏的 `通知单模版.xlsx`
 
 为避免意外分发教师数据，以下文件只会在执行 `package_ucrt64.ps1 -IncludeDataFiles` 时加入：
 
