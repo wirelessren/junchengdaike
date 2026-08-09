@@ -1,0 +1,55 @@
+/*
+复制本文件为 ui/local_override.qss 后启动程序：
+
+  .\build-ucrt64\均程代课管理.exe --ui-preview
+
+程序会自动加载这个覆盖文件；保存后会自动重新应用样式。
+下面这些选择器都来自 mainwindow.cpp 里补充的 objectName。
+*/
+
+#mainWindow {
+    background: #f3ede3;
+}
+
+#mainTabs::pane {
+    border-radius: 18px;
+}
+
+#taskEditGroup {
+    border: 1px solid #cfb596;
+    border-radius: 16px;
+}
+
+#statusSummaryLabel,
+#taskSummaryLabel,
+#freeSummaryLabel {
+    font-size: 11pt;
+}
+
+#assignButton,
+#saveTaskButton,
+#freeExportButton,
+#exportAssignmentsButton {
+    min-height: 34px;
+    border-radius: 11px;
+}
+
+#absentScheduleTable,
+#subScheduleTable,
+#freeScheduleTable,
+#assignmentTable,
+#taskTable,
+#freeListTable,
+#recommendTable {
+    border-radius: 14px;
+}
+
+#recommendPanel,
+#assignmentPanel,
+#schedulePanel {
+    background: transparent;
+}
+
+#teacherSearchEdit {
+    padding-left: 12px;
+}

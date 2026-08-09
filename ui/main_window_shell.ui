@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowShell</class>
+ <widget class="QWidget" name="mainWindow">
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="leftMargin">
+    <number>16</number>
+   </property>
+   <property name="topMargin">
+    <number>16</number>
+   </property>
+   <property name="rightMargin">
+    <number>16</number>
+   </property>
+   <property name="bottomMargin">
+    <number>16</number>
+   </property>
+   <property name="spacing">
+    <number>8</number>
+   </property>
+   <item>
+    <widget class="QTabWidget" name="mainTabs">
+     <widget class="QWidget" name="taskTabPage">
+      <attribute name="title">
+       <string>代课任务</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="editTabPage">
+      <attribute name="title">
+       <string>任务编辑</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="freeTabPage">
+      <attribute name="title">
+       <string>无课名单</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="settingsTabPage">
+      <attribute name="title">
+       <string>设置</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="aboutTabPage">
+      <attribute name="title">
+       <string>关于软件</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="statusSummaryLabel">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>36</height>
+      </size>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

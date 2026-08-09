@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditTab</class>
+ <widget class="QWidget" name="editTab">
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>8</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="taskEditGroup">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>88</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>任务编辑</string>
+     </property>
+     <layout class="QGridLayout" name="taskGridLayout">
+      <property name="leftMargin">
+       <number>8</number>
+      </property>
+      <property name="topMargin">
+       <number>6</number>
+      </property>
+      <property name="rightMargin">
+       <number>8</number>
+      </property>
+      <property name="bottomMargin">
+       <number>6</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>8</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>6</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="taskNameLabel">
+        <property name="text">
+         <string>任务名称</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="taskNameEdit"/>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="taskStartDateLabel">
+        <property name="text">
+         <string>代课起始日期</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QDateEdit" name="taskStartDateEdit">
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+        <property name="displayFormat">
+         <string>yyyy-MM-dd</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="taskEndDateLabel">
+        <property name="text">
+         <string>代课结束日期</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QDateEdit" name="taskEndDateEdit">
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+        <property name="displayFormat">
+         <string>yyyy-MM-dd</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="6">
+       <widget class="QLabel" name="taskReasonLabel">
+        <property name="text">
+         <string>代课原因</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7">
+       <widget class="QComboBox" name="taskReasonCombo"/>
+      </item>
+      <item row="0" column="8">
+       <widget class="QPushButton" name="saveTaskButton">
+        <property name="minimumSize">
+         <size>
+          <width>88</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>保存任务</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="taskSummaryLabel">
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSplitter" name="editContentSplitter">
+     <property name="childrenCollapsible">
+      <bool>false</bool>
+     </property>
+     <property name="handleWidth">
+      <number>6</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QWidget" name="schedulePanel">
+      <layout class="QVBoxLayout" name="schedulePanelLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QSplitter" name="editScheduleSplitter">
+         <property name="childrenCollapsible">
+          <bool>false</bool>
+         </property>
+         <property name="handleWidth">
+          <number>6</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <widget class="QWidget" name="absentPanel">
+          <property name="minimumSize">
+           <size>
+            <width>460</width>
+            <height>0</height>
+           </size>
+          </property>
+          <layout class="QVBoxLayout" name="absentPanelLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="selectorLayout">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <property name="spacing">
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="absentTeacherLabel">
+               <property name="text">
+                <string>被代课老师</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="searchLabel">
+               <property name="text">
+                <string>搜索</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="teacherSearchEdit">
+               <property name="placeholderText">
+                <string>输入姓名或首字母</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="teacherSelectLabel">
+               <property name="text">
+                <string>选择</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="teacherCombo"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="clearSelectionButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>74</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>清空已选</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="absentScheduleTable"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="recommendPanel">
+          <property name="minimumSize">
+           <size>
+            <width>152</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>170</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <layout class="QVBoxLayout" name="recommendPanelLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="recommendTitleLabel">
+             <property name="text">
+              <string>同科目可代课老师</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="recommendTable">
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::SingleSelection</enum>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <column>
+              <property name="text">
+               <string>姓名</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="assignButton">
+             <property name="minimumSize">
+              <size>
+               <width>84</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>设置代课</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="substitutePanel">
+          <property name="minimumSize">
+           <size>
+            <width>460</width>
+            <height>0</height>
+           </size>
+          </property>
+          <layout class="QVBoxLayout" name="substitutePanelLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>4</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="substituteTitleLabel">
+             <property name="text">
+              <string>代课老师课表</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="subScheduleTable"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="assignmentPanel">
+      <layout class="QVBoxLayout" name="assignmentPanelLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="assignmentHeaderLayout">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="spacing">
+          <number>8</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="assignmentTitleLabel">
+           <property name="text">
+            <string>代课安排</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="assignmentHeaderSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Expanding</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deleteAssignmentButton">
+           <property name="minimumSize">
+            <size>
+             <width>88</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>删除代课</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="exportAssignmentsButton">
+           <property name="minimumSize">
+            <size>
+             <width>98</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>导出代课单</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="assignmentTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>180</height>
+          </size>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>请假老师</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>周几</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>节次</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>班级</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>科目</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>代课老师</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

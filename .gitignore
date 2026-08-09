@@ -1,0 +1,10 @@
+/build*/
+/dist/
+*.zip
+*.db
+*.xlsx
+*.xls
+.codegraph/
+ui/local_override.qss
+third_party/xlnt/.git/
+/要求.md

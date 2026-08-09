@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsTab</class>
+ <widget class="QWidget" name="settingsTab">
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>8</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="scheduleSettingsGroup">
+     <property name="title">
+      <string>课表设置</string>
+     </property>
+     <layout class="QGridLayout" name="scheduleGridLayout">
+      <property name="horizontalSpacing">
+       <number>10</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>8</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="schedulePathLabel">
+        <property name="text">
+         <string>课表文件</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="schedulePathEdit">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+      <widget class="QPushButton" name="scheduleBrowseButton">
+        <property name="minimumSize">
+         <size>
+          <width>76</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>浏览</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="scheduleOpenButton">
+        <property name="minimumSize">
+         <size>
+          <width>84</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>打开文件</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <spacer name="scheduleSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="templateSettingsGroup">
+     <property name="title">
+      <string>通知单模板设置</string>
+     </property>
+     <layout class="QGridLayout" name="templateGridLayout">
+      <property name="horizontalSpacing">
+       <number>10</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>8</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="templatePathLabel">
+        <property name="text">
+         <string>模板文件</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="templatePathEdit">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+      <widget class="QPushButton" name="templateBrowseButton">
+        <property name="minimumSize">
+         <size>
+          <width>84</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>选择模板</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="templateOpenButton">
+        <property name="minimumSize">
+         <size>
+          <width>84</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>打开文件</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <spacer name="templateSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="statisticsExportGroup">
+     <property name="title">
+      <string>代课统计导出</string>
+     </property>
+     <layout class="QHBoxLayout" name="statisticsExportLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="statisticsStartLabel">
+        <property name="text">
+         <string>起始日期</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateEdit" name="statisticsStartDateEdit">
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+        <property name="displayFormat">
+         <string>yyyy-MM-dd</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="statisticsEndLabel">
+        <property name="text">
+         <string>结束日期</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateEdit" name="statisticsEndDateEdit">
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+        <property name="displayFormat">
+         <string>yyyy-MM-dd</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="statisticsAllCheckBox">
+        <property name="text">
+         <string>导出全部</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="statisticsExportSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="exportStatisticsButton">
+        <property name="minimumSize">
+         <size>
+          <width>136</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>导出代课统计</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="dataManagementGroup">
+     <property name="title">
+      <string>数据备份与导出</string>
+     </property>
+     <layout class="QGridLayout" name="dataManagementGridLayout">
+      <property name="horizontalSpacing">
+       <number>12</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>8</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="backupDataTitleLabel">
+        <property name="text">
+         <string>完整数据备份</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="backupDataDescriptionLabel">
+        <property name="text">
+         <string>备份课表、代课任务、代课安排和软件设置，用于迁移或恢复。</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="backupDataButton">
+        <property name="minimumSize">
+         <size>
+          <width>126</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>备份全部数据</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="exportTaskDataTitleLabel">
+        <property name="text">
+         <string>代课数据导出</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="exportTaskDataDescriptionLabel">
+        <property name="text">
+         <string>将全部任务及有效代课安排导出为 Excel，方便归档和统计。</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="exportTaskDataButton">
+        <property name="minimumSize">
+         <size>
+          <width>126</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>导出代课数据</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="restoreDataTitleLabel">
+        <property name="text">
+         <string>从备份恢复</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="restoreDataDescriptionLabel">
+        <property name="text">
+         <string>校验并恢复以前生成的数据库备份，恢复前会自动保存当前数据。</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="restoreDataButton">
+        <property name="minimumSize">
+         <size>
+          <width>126</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>选择备份并恢复</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3" rowspan="3">
+       <spacer name="dataManagementSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="actionsLayout">
+     <item>
+      <spacer name="actionsSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="updateSettingsButton">
+       <property name="minimumSize">
+        <size>
+         <width>84</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>更新设置</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="databaseLabel">
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="bottomSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
