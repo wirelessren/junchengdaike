@@ -75,11 +75,16 @@
 - 可执行目录：`dist/均程代课管理-ucrt64`
 - 压缩包：`dist/均程代课管理-ucrt64.zip`
 
-打包目录会带上：
+默认打包目录会带上：
 
 - `均程代课管理.exe`
 - Qt 运行库和插件
 - MinGW/UCRT64 运行库
+- `README.md`
+- `LICENSE`
+
+为避免意外分发教师数据，以下文件只会在执行 `package_ucrt64.ps1 -IncludeDataFiles` 时加入：
+
 - `教师课表统计.xlsx`
 - `教师源课表.xlsx`
 - `通知单模版.xlsx`

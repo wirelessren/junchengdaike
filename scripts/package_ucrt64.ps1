@@ -3,7 +3,8 @@ param(
     [string]$BuildDir = "build-ucrt64",
     [string]$BuildType = "Release",
     [string]$PackageDir = "dist\均程代课管理-ucrt64",
-    [string]$Msys2Root = $env:MSYS2_ROOT
+    [string]$Msys2Root = $env:MSYS2_ROOT,
+    [switch]$IncludeDataFiles
 )
 
 $ErrorActionPreference = "Stop"
@@ -94,11 +95,21 @@ foreach ($dirName in $runtimeDirs) {
     }
 }
 
-$dataFiles = @("教师课表统计.xlsx", "教师源课表.xlsx", "通知单模版.xlsx", "教师课表.db")
-foreach ($fileName in $dataFiles) {
+$documentationFiles = @("README.md", "LICENSE")
+foreach ($fileName in $documentationFiles) {
     $sourceFile = Join-Path $repoRoot $fileName
     if (Test-Path $sourceFile) {
         Copy-Item -LiteralPath $sourceFile -Destination $packagePath -Force
+    }
+}
+
+if ($IncludeDataFiles) {
+    $dataFiles = @("教师课表统计.xlsx", "教师源课表.xlsx", "通知单模版.xlsx", "教师课表.db")
+    foreach ($fileName in $dataFiles) {
+        $sourceFile = Join-Path $repoRoot $fileName
+        if (Test-Path $sourceFile) {
+            Copy-Item -LiteralPath $sourceFile -Destination $packagePath -Force
+        }
     }
 }
 

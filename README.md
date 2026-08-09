@@ -41,6 +41,12 @@ $env:MSYS2_ROOT = "D:\msys64"
 .\scripts\smoke_validate_ucrt64.ps1
 ```
 
+默认打包不包含本地课表、数据库和通知单模板。如果是校内使用并确定需要携带当前数据，可执行：
+
+```powershell
+.\scripts\package_ucrt64.ps1 -IncludeDataFiles
+```
+
 更详细的工程说明见 [docs/CPP版本说明.md](docs/CPP%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E.md)。
 
 
